@@ -1,6 +1,7 @@
 
 perl phaser_sql.pl slow-query.log >slow-query.log.csv
 perl stat_keys.pl slow-query.log.csv >slow-query.log.keys.csv
+sort -t ";" -k1,1rn -k5,5 stat.keys.csv >stat.keys.sort.csv
 
 mkdir tmp
 perl grep.pl stat.keys.sort.csv slow-query.log.keys.csv
